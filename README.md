@@ -1,62 +1,77 @@
-# 🎨 message-canvas
+# 💬 message-canvas
 
-[One sentence: what the app does and who it's for]
+A real-time, Telegram-style messaging app with one-to-one chats, group chats, and live status indicators.
 
-![React](https://img.shields.io/badge/React_18-61DAFB?logo=react&logoColor=black)
+![React](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind-06B6D4?logo=tailwindcss&logoColor=white)
-![shadcn/ui](https://img.shields.io/badge/shadcn%2Fui-000000?logo=shadcnui&logoColor=white)
-
-[Live demo](https://your-demo-link) · [Screenshots](#screenshots)
+![Node.js](https://img.shields.io/badge/Node.js-339933?logo=nodedotjs&logoColor=white)
+![Socket.io](https://img.shields.io/badge/Socket.io-010101?logo=socketdotio&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?logo=mongodb&logoColor=white)
 
 ## Screenshots
 
-[Add 2-3 screenshots or a short GIF of the app in use]
+[Add 2-3 screenshots: login, chat window, group chat]
 
 ## Features
 
-- [Main feature 1]
-- [Main feature 2]
-- [Main feature 3]
-- Light and dark mode
+Tick what's working in your build:
+
+- [ ] JWT authentication (signup, login, profile)
+- [ ] Real-time one-to-one messaging with Socket.io
+- [ ] Online/offline status and typing indicators
+- [ ] Message history stored in MongoDB
+- [ ] Group chats
+- [ ] Sent / delivered / seen markers
+- [ ] Image and file sharing
+- [ ] Message reactions, editing, and deletion
+- [ ] Channels (admin-only posting)
+- [ ] Light and dark mode, responsive layout, animations
 
 ## Tech stack
 
 | Layer | Tools |
 |---|---|
-| Framework | React 18, TypeScript |
-| Build tool | Vite |
-| Styling | Tailwind CSS |
-| Components | shadcn/ui (Radix UI) |
+| Frontend | React, TypeScript, Vite, Tailwind CSS, shadcn/ui, Framer Motion, Zustand |
+| Backend | Node.js, Express, Socket.io |
+| Database | MongoDB (Mongoose) |
+| Auth | JSON Web Tokens |
 
 ## Getting started
+
+**Requirements:** Node.js, npm, and a MongoDB database (local or Atlas).
 
 ```bash
 git clone https://github.com/unmoha/message-canvas.git
 cd message-canvas
+```
+
+**Backend**
+```bash
+cd server
+npm install
+cp .env.example .env    # then add your MongoDB URI and JWT secret
+npm run dev
+```
+
+**Frontend** (in a new terminal, from the project root)
+```bash
 npm install
 npm run dev
 ```
 
-| Command | Purpose |
-|---|---|
-| `npm run dev` | Start the development server |
-| `npm run build` | Create a production build |
-| `npm run preview` | Preview the production build |
+> ⚠️ Never commit your `.env` file or secrets.
 
 ## Project structure
 
 ```
-src/
-├── components/ui/   # shadcn/ui components
-├── lib/utils.ts     # Utility functions
-├── App.tsx          # Main application component
-├── index.css        # Global styles and theme variables
-└── main.tsx         # Entry point
+message-canvas/
+├── server/    # Node.js backend (API, Socket.io, MongoDB models)
+├── src/       # React frontend
+├── public/    # Static assets
+└── plan.md    # Original project plan
 ```
-
-Imports use the `@/` path alias, e.g. `import { Button } from "@/components/ui/button"`.
 
 ## Roadmap
 
